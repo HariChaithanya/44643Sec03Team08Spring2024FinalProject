@@ -26,7 +26,22 @@ Welcome to the Expense Tracker iOS app! This application helps users keep track 
 
 #### 4. Shaik Riyaz Husssian :  Coordinate with team members to ensure that project goals are met.
 ****
+## Work Breakdown Structure (WBS)
 
+1. **Project Planning**
+
+2. **UI/UX Design**
+   - Design user interface screens
+
+3. **iOS Development**
+   - Implement core features
+   - Implement CRUD operations
+
+4. **API Integration**
+   - Integarte with currency conversion API
+
+5. **Testing**
+   - Conduct unit testing
 
 
 
