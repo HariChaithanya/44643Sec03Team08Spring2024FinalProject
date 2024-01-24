@@ -1,2 +1,32 @@
 # 44643Sec04Team09Spring2024FinalProject
-Expenses Tracker is easy to use IOS app for taking control of all your expenses.
+# Expense Tracker iOS App
+
+## Overview
+
+Welcome to the Expense Tracker iOS app! This application helps users keep track of their expenses efficiently. Using this app, tracking and analyzing your expenses is simple.
+
+## Features
+
+- **Dashboard** : Provides an overview of the user's current financial status.
+- **Expense Entry** :  Quickly add expenses with date, category, amount, and description.
+- **Expense Categorization** : Categorize all your expenses easily by assigning categories.
+- **Quick Search and Filter** :  Users to easily locate specific expenses within the app.
+- **User Authentication** : Secure your expense data with user authentication.
+- **Managing Expenses** : This functionality allows users to add new expenses, view existing ones, update details, and delete expenses they no longer need.
+- **Currency Conversion** : This feature allows users to view their expenses in different currencies based on their preferences.
+****
+
+## Team Roles and Responsibilities
+
+## 1. Harichaithanya kotapati (iOS Developer): Implement UI/UX designs for the app. 
+
+## 2. Udaya Sri Naidu (iOS Developer) : Responsible for integrating external APIs into the iOS app
+
+## 3. Varshitha Lavu : Responsible for ensuring the quality and reliability of the iOS app through testing.
+
+## 4. Shaik Riyaz Husssian :  Coordinate with team members to ensure that project goals are met.
+****
+
+
+
+
