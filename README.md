@@ -18,13 +18,13 @@ Welcome to the Expense Tracker iOS app! This application helps users keep track 
 
 ## Team Roles and Responsibilities
 
-## 1. Harichaithanya kotapati (iOS Developer): Implement UI/UX designs for the app. 
+#### 1. Harichaithanya kotapati : Implement UI/UX designs for the app. 
 
-## 2. Udaya Sri Naidu (iOS Developer) : Responsible for integrating external APIs into the iOS app
+#### 2. Udaya Sri Naidu : Responsible for integrating external APIs into the iOS app
 
-## 3. Varshitha Lavu : Responsible for ensuring the quality and reliability of the iOS app through testing.
+#### 3. Varshitha Lavu : Responsible for ensuring the quality and reliability of the iOS app through testing.
 
-## 4. Shaik Riyaz Husssian :  Coordinate with team members to ensure that project goals are met.
+#### 4. Shaik Riyaz Husssian :  Coordinate with team members to ensure that project goals are met.
 ****
 
 
