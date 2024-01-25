@@ -41,7 +41,7 @@ Welcome to the Expense Tracker iOS app! This application helps users keep track 
    - Integrate with currency conversion API
 
 5. **Testing**
-   - Conduct unit testing
+   - Conduct Unit testing
 
 
 
