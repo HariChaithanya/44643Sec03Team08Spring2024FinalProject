@@ -1,4 +1,4 @@
-# 44643Sec04Team09Spring2024FinalProject
+# 44643Sec03Team08Spring2024FinalProject
 # Expense Tracker iOS App
 
 ## Overview
