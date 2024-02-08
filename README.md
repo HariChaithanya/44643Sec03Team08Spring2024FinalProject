@@ -45,6 +45,6 @@ Welcome to the Expense Tracker iOS app! This application helps users keep track 
 
 ### Sprint02
 1. **created the Ui prototypes for each screens and their functionalities**
-2. ** explored about the new features like real time sights using charts and expense prediction using Machine learning.**
+2. **Explored about the new features like real time sights using charts and expense prediction using Machine learning.**
 
 
