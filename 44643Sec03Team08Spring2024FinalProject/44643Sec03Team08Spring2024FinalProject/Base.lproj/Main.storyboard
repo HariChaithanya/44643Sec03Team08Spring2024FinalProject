@@ -32,26 +32,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="BJz-0p-gK0">
-                                <rect key="frame" x="96.666666666666686" y="311.66666666666669" width="200" height="228.66666666666669"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="3sf-2x-nar">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="kNG-fL-ps0"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Tracker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nj-Ol-Tzx">
-                                        <rect key="frame" x="0.0" y="200" width="200" height="28.666666666666657"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="BJz-0p-gK0">
+                                <rect key="frame" x="96.666666666666686" y="411.66666666666663" width="200" height="28.666666666666686"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="L1w-PL-W8x"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expense Tracker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nj-Ol-Tzx">
+                                <rect key="frame" x="96" y="448" width="200" height="28.666666666666668"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="3sf-2x-nar">
+                                <rect key="frame" x="96" y="240" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="kNG-fL-ps0"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v7e-w1-1gn"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
@@ -136,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hi8-yr-XpS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2256" y="-83"/>
+            <point key="canvasLocation" x="2230" y="-35"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="r4S-cT-4QK">
@@ -213,12 +212,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="or3-Ne-1hN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3404" y="-70"/>
+            <point key="canvasLocation" x="3401" y="-35"/>
         </scene>
         <!--Home-->
         <scene sceneID="fuQ-wn-5na">
             <objects>
-                <viewController storyboardIdentifier="DashboardViewController" id="bU8-vH-0Qx" customClass="DashboardViewController" customModule="ExpenseTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardViewController" id="bU8-vH-0Qx" customClass="DashboardViewController" customModule="_4643Sec03Team08Spring2024FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="drG-WH-gAz">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -244,8 +243,14 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="graph" translatesAutoresizingMaskIntoConstraints="NO" id="rlE-KL-kC3">
+                                <rect key="frame" x="20" y="301" width="353" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="uUq-va-0gg"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Dashboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DX9-ii-TCg">
-                                <rect key="frame" x="88" y="195" width="183" height="30"/>
+                                <rect key="frame" x="105" y="196" width="183" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -257,16 +262,17 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="7CG-zc-VmC"/>
                     <connections>
-                        <outlet property="costView" destination="0Py-qN-Vv6" id="taW-Da-hPp"/>
+                        <outlet property="costView" destination="wSe-QS-U5F" id="Hjo-L3-gEB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7sD-0F-ZZb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4254" y="-63"/>
+            <point key="canvasLocation" x="4273" y="-17"/>
         </scene>
     </scenes>
     <resources>
         <image name="Logo" width="577" height="433"/>
+        <image name="graph" width="543" height="462"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <namedColor name="BackgroundColor">
             <color red="0.063000001013278961" green="0.019999999552965164" blue="0.30199998617172241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

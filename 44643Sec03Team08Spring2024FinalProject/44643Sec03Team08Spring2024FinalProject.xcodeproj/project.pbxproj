@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15199EF12B8944AA00876ACF /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15199EF02B8944AA00876ACF /* DashboardVC.swift */; };
 		7079548C2B8866E000F1C8AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7079548B2B8866E000F1C8AB /* AppDelegate.swift */; };
 		7079548E2B8866E000F1C8AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7079548D2B8866E000F1C8AB /* SceneDelegate.swift */; };
 		707954902B8866E000F1C8AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7079548F2B8866E000F1C8AB /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15199EF02B8944AA00876ACF /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		707954882B8866E000F1C8AB /* 44643Sec03Team08Spring2024FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 44643Sec03Team08Spring2024FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7079548B2B8866E000F1C8AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7079548D2B8866E000F1C8AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				7079548D2B8866E000F1C8AB /* SceneDelegate.swift */,
 				7079548F2B8866E000F1C8AB /* ViewController.swift */,
 				707954912B8866E000F1C8AB /* Main.storyboard */,
+				15199EF02B8944AA00876ACF /* DashboardVC.swift */,
 				B58622DA2B88FF7200639057 /* RegisterViewController.swift */,
 				7079549F2B886B6D00F1C8AB /* SplashViewController.swift */,
 				707954942B8866E300F1C8AB /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				707954902B8866E000F1C8AB /* ViewController.swift in Sources */,
+				15199EF12B8944AA00876ACF /* DashboardVC.swift in Sources */,
 				B58622DB2B88FF7200639057 /* RegisterViewController.swift in Sources */,
 				7079548C2B8866E000F1C8AB /* AppDelegate.swift in Sources */,
 				7079548E2B8866E000F1C8AB /* SceneDelegate.swift in Sources */,
