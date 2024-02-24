@@ -47,4 +47,9 @@ Welcome to the Expense Tracker iOS app! This application helps users keep track 
 1. **created the Ui prototypes for each screens and their functionalities**
 2. **Explored about the new features like real time sights using charts and expense prediction using Machine learning.**
 
-
+### Sprint03
+1. **Created Four UI screens:**
+   - Start-up page, Register page, Login page, and user dashboard.
+2. **Added constraints for the UI elements in every UI Screen**
+3. **Dumped required assets into the working directory.**
+4. **Created seperate view controllers for each UI screen.**
