@@ -17,7 +17,10 @@ class SplashViewController: UIViewController {
     
     @objc func moveToView() -> Void {
         
-        //let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+     //   let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController]
        // self.navigationController?.pushViewController(vc, animated: true)
     }
     
