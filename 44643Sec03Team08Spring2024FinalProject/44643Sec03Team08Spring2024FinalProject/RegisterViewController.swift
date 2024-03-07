@@ -8,9 +8,16 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
+    
+    @IBOutlet weak var nameTF: UITextField!
+    @IBOutlet weak var emailTF: UITextField!
+    @IBOutlet weak var passwordTF: UITextField!
+    @IBOutlet weak var confirmPasswordTF: UITextField!
+    @IBOutlet weak var signupBTN: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = false
 
         // Do any additional setup after loading the view.
     }
