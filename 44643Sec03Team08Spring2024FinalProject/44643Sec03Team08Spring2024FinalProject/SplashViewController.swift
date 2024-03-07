@@ -36,3 +36,14 @@ class SplashViewController: UIViewController {
     */
 
 }
+
+extension UIViewController {
+    
+    func showAlert(str: String) -> Void {
+        
+        
+        let alert = UIAlertController(title: "", message: str, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+}

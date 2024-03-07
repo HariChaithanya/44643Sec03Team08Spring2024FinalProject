@@ -2,12 +2,19 @@
 //  LoginViewController.swift
 //  44643Sec03Team08Spring2024FinalProject
 //
-//  Created by Riyaz Hussian on 2/23/24.
+//  Created by Harchaithanya Kotapati on 3/7/24.
 //
 
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    @IBOutlet weak var emailTF: UITextField!
+    
+    @IBOutlet weak var passwordTF: UITextField!
+    
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var registerBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,5 +32,31 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func login(_ sender: Any) {
+        
+        if emailTF.text == "" {
+            
+            self.showAlert(str: "Please enter email")
+            return
+        }
+        
+        if passwordTF.text == "" {
+            
+            self.showAlert(str: "Please enter password")
+            return
+        }
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyTabBar") as! UITabBarController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    @IBAction func registerBtnClicked(_ sender: Any) {
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
+
+
