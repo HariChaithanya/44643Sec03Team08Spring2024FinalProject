@@ -7,9 +7,12 @@
 
 import UIKit
 
-class DashboardVC: UIViewController {
 
+class DashboardVC: UIViewController {
     
+    @IBOutlet weak var dateView: UILabel!
+    
+   
     @IBOutlet weak var costView: UILabel!
     
     override func viewDidLoad() {
@@ -17,19 +20,33 @@ class DashboardVC: UIViewController {
         self.navigationItem.title = "Dashboard"
         self.navigationItem.hidesBackButton = true
         costView.layer.cornerRadius = 8
-
-        // Do any additional setup after loading the view.
+        
+        updateDateLabel()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateDateLabel()
     }
-    */
+    
+    func updateDateLabel() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yyyy"
+        let todayDate = Date()
+        let formattedDate = dateFormatter.string(from: todayDate)
+        dateView.text = formattedDate
+    }
 
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -239,7 +239,7 @@
                                 <rect key="frame" x="20" y="79" width="353" height="75.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Februrary 2024" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHS-Pt-6gX">
-                                        <rect key="frame" x="68.666666666666657" y="12" width="118.66666666666666" height="21"/>
+                                        <rect key="frame" x="68.666666666666657" y="12" width="119" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -278,12 +278,13 @@
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="7CG-zc-VmC"/>
                     <navigationItem key="navigationItem" id="Jfc-A0-MkG"/>
                     <connections>
-                        <outlet property="costView" destination="wSe-QS-U5F" id="Hjo-L3-gEB"/>
+                        <outlet property="costView" destination="wSe-QS-U5F" id="Eq2-Qc-r3g"/>
+                        <outlet property="dateView" destination="RHS-Pt-6gX" id="BYM-J1-UEo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7sD-0F-ZZb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3300" y="437"/>
+            <point key="canvasLocation" x="3300" y="436.61971830985919"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="UmV-2W-piA">
