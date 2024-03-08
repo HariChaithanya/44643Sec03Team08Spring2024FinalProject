@@ -54,7 +54,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func registerBtnClicked(_ sender: Any) {
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
+        let vc = RegisterViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
