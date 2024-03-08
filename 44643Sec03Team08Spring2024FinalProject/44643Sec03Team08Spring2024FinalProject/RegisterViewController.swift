@@ -65,7 +65,7 @@ class RegisterViewController: UIViewController {
             }
         }
         
-    func showAlert(_ message: String) {
+    func showMsg(_ message: String) {
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
