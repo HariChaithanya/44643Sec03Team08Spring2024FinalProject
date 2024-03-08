@@ -33,4 +33,45 @@ class RegisterViewController: UIViewController {
     }
     */
 
+    @IBAction func signup(_ sender: Any) {
+            if nameTF.text == "" {
+                showAlert(str: "Please enter your name.")
+                return
+            }
+            
+            if emailTF.text == "" {
+                showAlert(str: "Please enter your email.")
+                return
+            }
+            
+            if !isValidEmail(emailTF.text!) {
+                showAlert(str: "Please enter a valid email.")
+                return
+            }
+            
+            if passwordTF.text == "" {
+                showAlert(str: "Please enter your password.")
+                return
+            }
+            
+            if confirmPasswordTF.text == "" {
+                showAlert(str: "Please confirm your password.")
+                return
+            }
+            
+            if passwordTF.text != confirmPasswordTF.text {
+                showAlert(str: "Passwords do not match.")
+                return
+            }
+        }
+        
+    func showAlert(_ message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+        func isValidEmail(_ email: String) -> Bool {
+            return email.contains("@") && email.contains(".")
+        }
 }
+

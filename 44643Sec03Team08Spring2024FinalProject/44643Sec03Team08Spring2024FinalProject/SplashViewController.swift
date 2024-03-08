@@ -20,8 +20,6 @@ class SplashViewController: UIViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
         self.navigationController?.pushViewController(vc, animated: true)
         
-     //   let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController]
-       // self.navigationController?.pushViewController(vc, animated: true)
     }
     
 

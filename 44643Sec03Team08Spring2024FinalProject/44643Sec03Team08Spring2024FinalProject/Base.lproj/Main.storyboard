@@ -192,6 +192,9 @@
                                         <rect key="frame" x="134.66666666666666" y="508.66666666666657" width="84" height="34.333333333333314"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Sign Up"/>
+                                        <connections>
+                                            <action selector="signup:" destination="JNe-no-Dgb" eventType="touchUpInside" id="4tZ-YK-RmJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
