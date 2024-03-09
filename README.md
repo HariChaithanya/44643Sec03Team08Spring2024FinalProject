@@ -53,3 +53,10 @@ Welcome to the Expense Tracker iOS app! This application helps users keep track 
 2. **Added constraints for the UI elements in every UI Screen**
 3. **Dumped required assets into the working directory.**
 4. **Created seperate view controllers for each UI screen.**
+
+### Sprint04
+1. **Added validation for login page and registration form fields.**
+2. **Connected required outlets for login page as well as registration page.**
+3. **Created a new UITabBarController for navigation.**
+4. **Created a profile view UI page and have added UI elements,auto layout,Constraints and assets to the profile UI screen.**
+5. **Updated DashboardVC to display the date in dateView.**
