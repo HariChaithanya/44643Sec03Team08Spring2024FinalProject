@@ -16,6 +16,7 @@
 		707954982B8866E300F1C8AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 707954962B8866E300F1C8AB /* LaunchScreen.storyboard */; };
 		707954A02B886B6D00F1C8AB /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7079549F2B886B6D00F1C8AB /* SplashViewController.swift */; };
 		7085D4AF2B9A296000F79EAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7085D4AE2B9A296000F79EAF /* LoginViewController.swift */; };
+		B51435182B9BEC12007BB601 /* MyexpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51435172B9BEC12007BB601 /* MyexpensesViewController.swift */; };
 		B58622DB2B88FF7200639057 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58622DA2B88FF7200639057 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		707954992B8866E300F1C8AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7079549F2B886B6D00F1C8AB /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		7085D4AE2B9A296000F79EAF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B51435172B9BEC12007BB601 /* MyexpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyexpensesViewController.swift; sourceTree = "<group>"; };
 		B58622DA2B88FF7200639057 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,15 +70,24 @@
 				7079548D2B8866E000F1C8AB /* SceneDelegate.swift */,
 				7079548F2B8866E000F1C8AB /* ViewController.swift */,
 				707954912B8866E000F1C8AB /* Main.storyboard */,
-				7085D4AE2B9A296000F79EAF /* LoginViewController.swift */,
+				B51435192B9BEC1D007BB601 /* viewcontrollers */,
 				15199EF02B8944AA00876ACF /* DashboardVC.swift */,
-				B58622DA2B88FF7200639057 /* RegisterViewController.swift */,
-				7079549F2B886B6D00F1C8AB /* SplashViewController.swift */,
 				707954942B8866E300F1C8AB /* Assets.xcassets */,
 				707954962B8866E300F1C8AB /* LaunchScreen.storyboard */,
 				707954992B8866E300F1C8AB /* Info.plist */,
 			);
 			path = 44643Sec03Team08Spring2024FinalProject;
+			sourceTree = "<group>";
+		};
+		B51435192B9BEC1D007BB601 /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				7085D4AE2B9A296000F79EAF /* LoginViewController.swift */,
+				B58622DA2B88FF7200639057 /* RegisterViewController.swift */,
+				7079549F2B886B6D00F1C8AB /* SplashViewController.swift */,
+				B51435172B9BEC12007BB601 /* MyexpensesViewController.swift */,
+			);
+			path = viewcontrollers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7085D4AF2B9A296000F79EAF /* LoginViewController.swift in Sources */,
+				B51435182B9BEC12007BB601 /* MyexpensesViewController.swift in Sources */,
 				707954902B8866E000F1C8AB /* ViewController.swift in Sources */,
 				15199EF12B8944AA00876ACF /* DashboardVC.swift in Sources */,
 				B58622DB2B88FF7200639057 /* RegisterViewController.swift in Sources */,
