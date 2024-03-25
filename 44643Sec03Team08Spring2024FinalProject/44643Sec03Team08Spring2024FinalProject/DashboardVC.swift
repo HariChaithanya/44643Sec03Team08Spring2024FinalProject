@@ -14,6 +14,8 @@ class DashboardVC: UIViewController {
     
    
     @IBOutlet weak var costView: UILabel!
+    var counter: Int = 0
+    var totalAmount: Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +38,14 @@ class DashboardVC: UIViewController {
         let formattedDate = dateFormatter.string(from: todayDate)
         dateView.text = formattedDate
     }
+    @IBAction func incrementCounter(_ sender: UIButton) {
+            counter += 1
+            costView.text = "Counter: \(counter)"
+        }
 
-    
+    func calculateTotalAmount() {
+        totalAmount = Double(counter) * 100.0
+           }
     
     /*
      // MARK: - Navigation
