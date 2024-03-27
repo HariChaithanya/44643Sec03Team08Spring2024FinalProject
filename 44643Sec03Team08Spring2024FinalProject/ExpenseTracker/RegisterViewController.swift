@@ -22,27 +22,14 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
 
         self.navigationController?.navigationBar.isHidden = false
-        // Do any additional setup after loading the view.
+        
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     @IBAction func register(_ sender: Any) {
         
-        if nameTF.text == "" {
-            
-            self.showAlert(str: "Please enter email")
-            return
-        }
         
         if emailTF.text == "" {
             
@@ -56,9 +43,16 @@ class RegisterViewController: UIViewController {
             return
         }
         
-        if confirmPasswordTF.text == "" {
+        if nameTF.text == "" {
             
             self.showAlert(str: "Please enter email")
+            return
+        }
+        
+
+        if confirmPasswordTF.text == "" {
+            
+            self.showAlert(str: "Please enter Password")
             return
         }
         
