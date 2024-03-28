@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70EAE2A92BB6029800434819 /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EAE2A82BB6029800434819 /* AuthenticationModel.swift */; };
 		742999FE2B860F3300C22B9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742999FD2B860F3300C22B9C /* AppDelegate.swift */; };
 		74299A002B860F3300C22B9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742999FF2B860F3300C22B9C /* SceneDelegate.swift */; };
 		74299A022B860F3300C22B9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74299A012B860F3300C22B9C /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		70EAE2A82BB6029800434819 /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
 		742999FA2B860F3300C22B9C /* ExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		742999FD2B860F3300C22B9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		742999FF2B860F3300C22B9C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				742999FD2B860F3300C22B9C /* AppDelegate.swift */,
 				742999FF2B860F3300C22B9C /* SceneDelegate.swift */,
+				70EAE2A82BB6029800434819 /* AuthenticationModel.swift */,
 				74299A012B860F3300C22B9C /* ViewController.swift */,
 				7455D6162B875215008560A9 /* SplashViewController.swift */,
 				74299A112B86119800C22B9C /* LoginViewController.swift */,
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70EAE2A92BB6029800434819 /* AuthenticationModel.swift in Sources */,
 				74299A122B86119800C22B9C /* LoginViewController.swift in Sources */,
 				74299A162B86133B00C22B9C /* DashboardViewController.swift in Sources */,
 				74299A142B8611A000C22B9C /* RegisterViewController.swift in Sources */,
