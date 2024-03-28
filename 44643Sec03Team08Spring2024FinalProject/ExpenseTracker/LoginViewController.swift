@@ -8,7 +8,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var emailTF: UITextField!
     
     @IBOutlet weak var passwordTF: UITextField!
@@ -27,8 +27,8 @@ class LoginViewController: UIViewController {
         
         self.navigationController?.navigationBar.isHidden = true
     }
-
-
+    
+    
     @IBAction func login(_ sender: Any) {
         
         if emailTF.text == "" {
@@ -52,5 +52,22 @@ class LoginViewController: UIViewController {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        emailTF.text = ""
+        passwordTF.text = ""
+    }
+    @IBAction func forgotPasswordTapped(_ sender: Any) {
+        guard let email = emailTF.text, !email.isEmpty else {
+            showAlert(message: "Please enter your email to reset password")
+            return
+        }
+        showAlert(message: "Password reset link sent to \(email)")
     }
 }
