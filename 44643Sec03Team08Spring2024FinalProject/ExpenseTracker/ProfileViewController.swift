@@ -16,7 +16,20 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    
+    
+    //cha
+    func navigateToLoginScreen() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+            UIApplication.shared.keyWindow?.rootViewController = loginVC
+        }
 
+    @IBAction func logout(_ sender: UIButton) {
+        
+        navigateToLoginScreen()
+    }
     /*
     // MARK: - Navigation
 
