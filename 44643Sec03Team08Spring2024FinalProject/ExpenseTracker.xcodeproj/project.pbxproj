@@ -129,6 +129,9 @@
 				Base,
 			);
 			mainGroup = 742999F12B860F3300C22B9C;
+			packageReferences = (
+				EF3BD9BB2BB6813C00414F44 /* XCRemoteSwiftPackageReference "firebase-tools" */,
+			);
 			productRefGroup = 742999FB2B860F3300C22B9C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -387,6 +390,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EF3BD9BB2BB6813C00414F44 /* XCRemoteSwiftPackageReference "firebase-tools" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-tools.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 742999F22B860F3300C22B9C /* Project object */;
 }
