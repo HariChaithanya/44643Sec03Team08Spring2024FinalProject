@@ -60,3 +60,22 @@ Welcome to the Expense Tracker iOS app! This application helps users keep track 
 3. **Created a new UITabBarController for navigation.**
 4. **Created a profile view UI page and have added UI elements,auto layout,Constraints and assets to the profile UI screen.**
 5. **Updated DashboardVC to display the date in dateView.**
+
+
+### Sprint05
+1. **Added Image Views to Dashboard View:**
+- Incorporated image views into the Dashboard View and loaded sample images into them.
+2. **UI Enhancements:**
+- Changed the corner styling of two buttons and adjusted the toolbar of the navigation controller.
+3. **Functionality Additions:**
+- Implemented the logout functionality in the profile view controller.
+- Added UI elements like spending limit and monthly expenses to the dashboard UI page.
+- Implemented email validation, forgot password, and alert functionalities in the LoginVC.
+- Added register functionality and created a navigation controller for profile view and about page.
+- Added functionality to increment the counter on button tap.
+4. **Error Fixes:**
+- Worked on errors in the register view controller and made a few changes in the login view controller.
+- Fixed code errors and successfully built the project.
+5. **Infrastructure Setup:**
+- Added the required package dependencies and created the Firebase account for the database.
+- Created an authentication model and AuthenticationManager for providing authentication in the application.
