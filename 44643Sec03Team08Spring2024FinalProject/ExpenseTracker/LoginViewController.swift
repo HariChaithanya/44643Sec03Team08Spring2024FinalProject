@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         
+        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,24 +28,54 @@ class LoginViewController: UIViewController {
         
         self.navigationController?.navigationBar.isHidden = true
     }
-    
-    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
     @IBAction func login(_ sender: Any) {
         
         if emailTF.text == "" {
             
-            self.showAlert(str: "Please enter a valid email")
+            self.showAlert(str: "Please enter email")
             return
         }
         
         if passwordTF.text == "" {
             
-            self.showAlert(str: "Please enter password field")
+            self.showAlert(str: "Please enter password")
             return
         }
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyTabBar") as! UITabBarController
-        self.navigationController?.pushViewController(vc, animated: true)
+        Task {
+            
+            self.showSpinner(onView: self.view)
+            await login(email: emailTF.text!, password: passwordTF.text!)
+        }
+
+    }
+    
+    
+    func login(email: String, password: String) async {
+        do {
+            
+            try await AuthenticationManager.shared.signIn(email: email, password: password)
+            
+            self.removeSpinner()
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyTabBar") as! UITabBarController
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        } catch {
+            
+            self.removeSpinner()
+            self.showAlert(str: "Invalid Login Credentials! Please try again.")
+        }
     }
     
     
@@ -53,21 +84,6 @@ class LoginViewController: UIViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    func showAlert(message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        emailTF.text = ""
-        passwordTF.text = ""
-    }
-    @IBAction func forgotPasswordTapped(_ sender: Any) {
-        guard let email = emailTF.text, !email.isEmpty else {
-            showAlert(message: "Please enter your email to reset password")
-            return
-        }
-        showAlert(message: "Password reset link sent to \(email)")
-    }
+
+
 }

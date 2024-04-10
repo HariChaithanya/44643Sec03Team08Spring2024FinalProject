@@ -131,6 +131,7 @@
 			mainGroup = 742999F12B860F3300C22B9C;
 			packageReferences = (
 				EF3BD9BB2BB6813C00414F44 /* XCRemoteSwiftPackageReference "firebase-tools" */,
+				70D3239A2BC7344B00D92DA2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 742999FB2B860F3300C22B9C /* Products */;
 			projectDirPath = "";
@@ -392,6 +393,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		70D3239A2BC7344B00D92DA2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.24.0;
+			};
+		};
 		EF3BD9BB2BB6813C00414F44 /* XCRemoteSwiftPackageReference "firebase-tools" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-tools.git";
