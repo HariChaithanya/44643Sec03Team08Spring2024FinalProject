@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SplashViewController: UIViewController {
 
@@ -13,15 +14,23 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         perform(#selector(moveToView), with: nil, afterDelay: 3)
-        // Do any additional setup after loading the view.
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     
     @objc func moveToView() -> Void {
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+        if Auth.auth().currentUser == nil {
+            
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else {
+            
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyTabBar") as! UITabBarController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     /*
     // MARK: - Navigation
@@ -45,3 +54,4 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
+
