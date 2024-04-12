@@ -79,3 +79,5 @@ Welcome to the Expense Tracker iOS app! This application helps users keep track 
 5. **Infrastructure Setup:**
 - Added the required package dependencies and created the Firebase account for the database.
 - Created an authentication model and AuthenticationManager for providing authentication in the application.
+
+- Commmit
