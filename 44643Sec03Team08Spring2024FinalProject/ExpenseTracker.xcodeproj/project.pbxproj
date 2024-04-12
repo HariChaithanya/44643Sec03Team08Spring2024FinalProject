@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7011446A2BC9ED9F00850E27 /* ExpenseTrackerModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 701144692BC9ED9F00850E27 /* ExpenseTrackerModel.mlmodel */; };
+		7011446C2BC9EDC200850E27 /* ExpenseTrackerAll.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7011446B2BC9EDC200850E27 /* ExpenseTrackerAll.mlmodel */; };
 		7061599A2BC813EE0022CD9A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 706159992BC813EE0022CD9A /* FirebaseAnalytics */; };
 		7061599C2BC813EE0022CD9A /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 7061599B2BC813EE0022CD9A /* FirebaseAnalyticsOnDeviceConversion */; };
 		7061599E2BC813EE0022CD9A /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7061599D2BC813EE0022CD9A /* FirebaseAnalyticsSwift */; };
@@ -49,6 +51,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		701144692BC9ED9F00850E27 /* ExpenseTrackerModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ExpenseTrackerModel.mlmodel; sourceTree = "<group>"; };
+		7011446B2BC9EDC200850E27 /* ExpenseTrackerAll.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ExpenseTrackerAll.mlmodel; sourceTree = "<group>"; };
 		70EAE2A82BB6029800434819 /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
 		742999FA2B860F3300C22B9C /* ExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		742999FD2B860F3300C22B9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 				74299A032B860F3300C22B9C /* Main.storyboard */,
 				74299A062B860F3400C22B9C /* Assets.xcassets */,
 				74299A082B860F3400C22B9C /* LaunchScreen.storyboard */,
+				7011446B2BC9EDC200850E27 /* ExpenseTrackerAll.mlmodel */,
+				701144692BC9ED9F00850E27 /* ExpenseTrackerModel.mlmodel */,
 				74299A0B2B860F3400C22B9C /* Info.plist */,
 			);
 			path = ExpenseTracker;
@@ -242,11 +248,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7011446A2BC9ED9F00850E27 /* ExpenseTrackerModel.mlmodel in Sources */,
 				70EAE2A92BB6029800434819 /* AuthenticationModel.swift in Sources */,
 				74299A122B86119800C22B9C /* LoginViewController.swift in Sources */,
 				74299A162B86133B00C22B9C /* DashboardViewController.swift in Sources */,
 				74299A142B8611A000C22B9C /* RegisterViewController.swift in Sources */,
 				74299A022B860F3300C22B9C /* ViewController.swift in Sources */,
+				7011446C2BC9EDC200850E27 /* ExpenseTrackerAll.mlmodel in Sources */,
 				742999FE2B860F3300C22B9C /* AppDelegate.swift in Sources */,
 				7455D6172B875215008560A9 /* SplashViewController.swift in Sources */,
 				74538E392B99BF4400AB0602 /* ProfileViewController.swift in Sources */,
