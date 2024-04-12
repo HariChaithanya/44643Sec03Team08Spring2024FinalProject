@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WGR-lG-API">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WGR-lG-API">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -587,10 +587,10 @@
             </objects>
             <point key="canvasLocation" x="2941" y="-27"/>
         </scene>
-        <!--View Controller-->
+        <!--Change Password View Controller-->
         <scene sceneID="gCh-ek-svz">
             <objects>
-                <viewController id="oBw-af-1WB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangePasswordViewController" id="oBw-af-1WB" customClass="ChangePasswordViewController" customModule="ExpenseTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VQ6-UC-WiE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -607,7 +607,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4yc-Ys-o9N" userLabel="UI SV">
                                         <rect key="frame" x="0.0" y="126.66666666666666" width="333" height="189.99999999999997"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edF-ZK-OfU">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edF-ZK-OfU">
                                                 <rect key="frame" x="0.0" y="0.0" width="333" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="2FZ-lL-JgS"/>
@@ -639,6 +639,9 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Reset"/>
+                                                <connections>
+                                                    <action selector="update:" destination="oBw-af-1WB" eventType="touchUpInside" id="WEF-gb-L2M"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -657,10 +660,15 @@
                             <constraint firstAttribute="bottom" secondItem="pTW-21-9h1" secondAttribute="bottom" constant="30" id="RrK-cN-ZMl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmPassword" destination="CVw-do-4Si" id="mka-m7-dKb"/>
+                        <outlet property="newPassword" destination="Sue-2f-IlS" id="nrk-PR-kaB"/>
+                        <outlet property="password" destination="edF-ZK-OfU" id="j5v-Qs-k5V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qoX-tY-RfF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2134" y="891"/>
+            <point key="canvasLocation" x="7972" y="614"/>
         </scene>
     </scenes>
     <resources>
