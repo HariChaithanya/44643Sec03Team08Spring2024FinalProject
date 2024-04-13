@@ -85,6 +85,7 @@
 				EFE13E4B2BC9FB6F00F8EE33 /* ChangePasswordViewController.swift */,
 				74538E382B99BF4400AB0602 /* ProfileViewController.swift */,
 				74299A032B860F3300C22B9C /* Main.storyboard */,
+				B59FB9992BC9EEE9003B4D35 /* ForgotPasswordViewController.swift */,
 				74299A062B860F3400C22B9C /* Assets.xcassets */,
 				74299A082B860F3400C22B9C /* LaunchScreen.storyboard */,
 				7011446B2BC9EDC200850E27 /* ExpenseTrackerAll.mlmodel */,
