@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>edu.nwmissouri.spring24.expense.tracker</string>
+	<string>edu.nwmissouri.spring24.cs44643.sec.ExpenseTracker</string>
 	<key>PROJECT_ID</key>
 	<string>expensetracker-9f5f7</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:851566918964:ios:7b7bcac854579784c7f961</string>
+	<string>1:851566918964:ios:e3d56b6cfcf8ce84c7f961</string>
 </dict>
 </plist>

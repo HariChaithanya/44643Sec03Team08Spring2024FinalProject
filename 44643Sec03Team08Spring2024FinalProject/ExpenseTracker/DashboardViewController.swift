@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import CoreML
+import Charts
+import DGCharts
+
 
 class DashboardViewController: UIViewController {
     
@@ -13,6 +17,8 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var totalLbl: UILabel!
     @IBOutlet weak var predictionLbl: UILabel!
     
+    @IBOutlet weak var barChart: BarChartView!
+
     
     @IBOutlet var costView: UIView!
     
