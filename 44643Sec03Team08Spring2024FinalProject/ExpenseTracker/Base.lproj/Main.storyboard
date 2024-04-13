@@ -8,6 +8,7 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -596,16 +597,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pTW-21-9h1" userLabel="BigContainer SV">
-                                <rect key="frame" x="30" y="89" width="333" height="316.66666666666669"/>
+                                <rect key="frame" x="30" y="89" width="333" height="317.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbd-lo-uRi">
-                                        <rect key="frame" x="0.0" y="0.0" width="333" height="118.66666666666667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="119"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4yc-Ys-o9N" userLabel="UI SV">
-                                        <rect key="frame" x="0.0" y="126.66666666666666" width="333" height="189.99999999999997"/>
+                                        <rect key="frame" x="0.0" y="127.00000000000001" width="333" height="190.33333333333337"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edF-ZK-OfU">
                                                 <rect key="frame" x="0.0" y="0.0" width="333" height="44"/>
@@ -617,7 +618,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sue-2f-IlS">
-                                                <rect key="frame" x="0.0" y="52.000000000000028" width="333" height="44"/>
+                                                <rect key="frame" x="0.0" y="52" width="333" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="YQI-g4-BmY"/>
                                                 </constraints>
@@ -625,7 +626,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CVw-do-4Si">
-                                                <rect key="frame" x="0.0" y="104.00000000000003" width="333" height="34"/>
+                                                <rect key="frame" x="0.0" y="104" width="333" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="34h-v5-Py5"/>
                                                 </constraints>
@@ -633,7 +634,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDR-ME-haj">
-                                                <rect key="frame" x="0.0" y="146.00000000000003" width="333" height="44"/>
+                                                <rect key="frame" x="0.0" y="156" width="333" height="34.333333333333343"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="VYa-Yl-DOb"/>
                                                 </constraints>
@@ -670,6 +671,76 @@
             </objects>
             <point key="canvasLocation" x="7972" y="614"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="sD6-8S-ipN">
+            <objects>
+                <viewController id="b0p-N4-dbf" customClass="ViewController" customModule="ExpenseTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YWH-Ia-tZZ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XIy-Mh-sKw">
+                                <rect key="frame" x="16" y="83" width="361" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6Bu-sl-pw4"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <menu key="menu" id="Bnm-sc-UL1">
+                                    <children>
+                                        <command title="Item 1" id="9vW-Tl-MlO"/>
+                                        <command title="Item 2" id="Dke-rk-oUe"/>
+                                    </children>
+                                </menu>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="medium">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" name="CardViewColor"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dwP-wi-nlv">
+                                <rect key="frame" x="16" y="143" width="361" height="44"/>
+                                <color key="backgroundColor" name="CardViewColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="8fn-yA-3JW"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiV-UE-Xdz">
+                                <rect key="frame" x="137.66666666666666" y="235" width="117.66666666666666" height="34.333333333333314"/>
+                                <inset key="contentEdgeInsets" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add"/>
+                                <connections>
+                                    <action selector="add:" destination="b0p-N4-dbf" eventType="touchUpInside" id="dXL-v4-hKh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eld-Yf-4Ud"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BiV-UE-Xdz" firstAttribute="top" secondItem="dwP-wi-nlv" secondAttribute="bottom" constant="48" id="Drk-ZZ-w51"/>
+                            <constraint firstItem="XIy-Mh-sKw" firstAttribute="top" secondItem="eld-Yf-4Ud" secondAttribute="top" constant="24" id="Rhz-IN-3hv"/>
+                            <constraint firstItem="BiV-UE-Xdz" firstAttribute="centerX" secondItem="YWH-Ia-tZZ" secondAttribute="centerX" id="S22-dl-Cdf"/>
+                            <constraint firstItem="XIy-Mh-sKw" firstAttribute="leading" secondItem="eld-Yf-4Ud" secondAttribute="leading" constant="16" id="aLn-fi-3pT"/>
+                            <constraint firstItem="eld-Yf-4Ud" firstAttribute="trailing" secondItem="XIy-Mh-sKw" secondAttribute="trailing" constant="16" id="aj0-mW-DJs"/>
+                            <constraint firstItem="dwP-wi-nlv" firstAttribute="top" secondItem="XIy-Mh-sKw" secondAttribute="bottom" constant="16" id="fpP-EU-aPm"/>
+                            <constraint firstItem="dwP-wi-nlv" firstAttribute="leading" secondItem="eld-Yf-4Ud" secondAttribute="leading" constant="16" id="rCi-ZQ-YZ4"/>
+                            <constraint firstItem="eld-Yf-4Ud" firstAttribute="trailing" secondItem="dwP-wi-nlv" secondAttribute="trailing" constant="16" id="spK-Py-k0X"/>
+                            <constraint firstItem="BiV-UE-Xdz" firstAttribute="width" secondItem="YWH-Ia-tZZ" secondAttribute="width" multiplier="0.3" id="veR-hX-UP5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="amountTF" destination="dwP-wi-nlv" id="Ykv-Qh-kXm"/>
+                        <outlet property="categoryBtn" destination="XIy-Mh-sKw" id="e3M-zZ-dMG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vrV-9W-adB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7492" y="-60"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Logo" width="577" height="433"/>
@@ -688,7 +759,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
