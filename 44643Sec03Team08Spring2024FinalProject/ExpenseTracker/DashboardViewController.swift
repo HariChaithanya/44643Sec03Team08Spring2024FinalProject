@@ -13,7 +13,6 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var totalLbl: UILabel!
     @IBOutlet weak var predictionLbl: UILabel!
     
-    @IBOutlet weak var barChart: BarChartView!
     
     @IBOutlet var costView: UIView!
     
@@ -30,13 +29,7 @@ class DashboardViewController: UIViewController {
         let str = dtFormatter.string(from: Date())
         monthLbl.text = str
         
-        barChart.noDataText = "No chart data available,\n You didn't spend any amount in this month."
-        barChart.noDataTextColor = .white
-        barChart.noDataFont = UIFont.systemFont(ofSize: 20, weight: .bold)
-        barChart.noDataTextAlignment = .center
-        
-        self.getPredictedValue()
-        self.getExpense()
+
         
     }
     

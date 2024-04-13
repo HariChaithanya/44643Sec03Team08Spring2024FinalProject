@@ -553,7 +553,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Sign Up"/>
                                         <connections>
-                                            <action selector="register:" destination="Ylv-K0-KLH" eventType="touchUpInside" id="n5O-l7-WaO"/>
+                                            <action selector="register:" destination="Ylv-K0-KLH" eventType="touchUpInside" id="GYg-wx-Rz8"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -576,11 +576,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="confirmPasswordTF" destination="rVt-Uq-vaD" id="ROq-tG-cPM"/>
-                        <outlet property="emailTF" destination="oQh-Oy-bgm" id="pCG-NX-9jh"/>
-                        <outlet property="nameTF" destination="eJJ-GM-Vou" id="gTD-uT-vnl"/>
-                        <outlet property="passwordTF" destination="rT8-cJ-TKp" id="de6-Ln-SNk"/>
-                        <outlet property="registerBtn" destination="HFE-RW-OQ4" id="EKb-MJ-3hf"/>
+                        <outlet property="confirmPasswordTF" destination="rVt-Uq-vaD" id="RQF-Db-SeY"/>
+                        <outlet property="emailTF" destination="oQh-Oy-bgm" id="64z-pA-SjP"/>
+                        <outlet property="nameTF" destination="eJJ-GM-Vou" id="GB3-SW-vnY"/>
+                        <outlet property="passwordTF" destination="rT8-cJ-TKp" id="79F-82-iLN"/>
+                        <outlet property="registerBtn" destination="HFE-RW-OQ4" id="Sav-t9-eSB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lR7-wN-KO2" sceneMemberID="firstResponder"/>
@@ -774,13 +774,13 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

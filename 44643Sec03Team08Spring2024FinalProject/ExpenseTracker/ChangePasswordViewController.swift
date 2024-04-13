@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ChangePasswordViewController: ViewController {
     
@@ -26,7 +27,7 @@ class ChangePasswordViewController: ViewController {
     
     
     @IBAction func update(_ sender: UIButton) {
-    }
+    
     self.view.endEditing(true)
     if self.validateData() {
         
@@ -87,4 +88,4 @@ func validateData() -> Bool {
  }
  */
 
-}
+
