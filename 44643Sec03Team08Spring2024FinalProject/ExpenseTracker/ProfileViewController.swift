@@ -6,42 +6,75 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
+
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var emailLbl: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         self.navigationItem.title = "Profile"
-        // Do any additional setup after loading the view.
+        
+        
+        nameLbl.text = Auth.auth().currentUser?.displayName ?? ""
+        emailLbl.text = Auth.auth().currentUser?.email ?? ""
     }
     
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
     
     
-    
-    //cha
-    func navigateToLoginScreen() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
-            UIApplication.shared.keyWindow?.rootViewController = loginVC
-        }
+    @IBAction func changePassword(_ sender: Any) {
         
-//        @IBAction func logout(_ sender: UIButton) {
-//            
-//            navigateToLoginScreen()
-//        }
-        /*
-         // MARK: - Navigation
-         
-         // In a storyboard-based application, you will often want to do a little preparation before navigation
-         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-         }
-         */
+        let obj = self.storyboard?.instantiateViewController(withIdentifier: "ChangePasswordViewController") as! ChangePasswordViewController
+        self.navigationController!.pushViewController(obj, animated: true)
+    }
+    
+    @IBAction func logout(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to logout?", preferredStyle: UIAlertController.Style.alert)
+        
+        
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.destructive, handler: { action in
+
+        }))
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive, handler: { action in
+
+            self.logout()
+
+        }))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        
+        
         
     }
+    
+    func logout() -> Void {
+        
+        do {
+            
+            try Auth.auth().signOut()
+        } catch {}
+        
+        
+        let obj = self.storyboard?.instantiateViewController(withIdentifier: "SplashViewController") as! SplashViewController
+        self.navigationController!.pushViewController(obj, animated: true)
+    }
+    
 }
-
-
