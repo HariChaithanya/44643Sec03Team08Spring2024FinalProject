@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15C16C382BCCB06700D398F0 /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C16C372BCCB06700D398F0 /* AddExpenseViewController.swift */; };
 		7011446A2BC9ED9F00850E27 /* ExpenseTrackerModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 701144692BC9ED9F00850E27 /* ExpenseTrackerModel.mlmodel */; };
 		7011446C2BC9EDC200850E27 /* ExpenseTrackerAll.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7011446B2BC9EDC200850E27 /* ExpenseTrackerAll.mlmodel */; };
 		70394FB92BCAD1DC00817529 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 70394FB82BCAD1DC00817529 /* FirebaseAuth */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15C16C372BCCB06700D398F0 /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
 		701144692BC9ED9F00850E27 /* ExpenseTrackerModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ExpenseTrackerModel.mlmodel; sourceTree = "<group>"; };
 		7011446B2BC9EDC200850E27 /* ExpenseTrackerAll.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ExpenseTrackerAll.mlmodel; sourceTree = "<group>"; };
 		70394FBC2BCAD32000817529 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				74299A152B86133B00C22B9C /* DashboardViewController.swift */,
 				EFE13E4B2BC9FB6F00F8EE33 /* ChangePasswordViewController.swift */,
 				EFE13E4D2BCA338800F8EE33 /* ExpenseModel.swift */,
+				15C16C372BCCB06700D398F0 /* AddExpenseViewController.swift */,
 				74538E382B99BF4400AB0602 /* ProfileViewController.swift */,
 				74299A032B860F3300C22B9C /* Main.storyboard */,
 				74299A062B860F3400C22B9C /* Assets.xcassets */,
@@ -200,6 +203,7 @@
 				74299A142B8611A000C22B9C /* RegisterViewController.swift in Sources */,
 				74299A022B860F3300C22B9C /* ViewController.swift in Sources */,
 				7011446C2BC9EDC200850E27 /* ExpenseTrackerAll.mlmodel in Sources */,
+				15C16C382BCCB06700D398F0 /* AddExpenseViewController.swift in Sources */,
 				EFE13E4E2BCA338800F8EE33 /* ExpenseModel.swift in Sources */,
 				742999FE2B860F3300C22B9C /* AppDelegate.swift in Sources */,
 				7455D6172B875215008560A9 /* SplashViewController.swift in Sources */,
