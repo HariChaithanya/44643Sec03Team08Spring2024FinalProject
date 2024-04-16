@@ -4,9 +4,10 @@
 //
 //  Created by Riyaz Hussian on 4/12/24.
 //
+import Foundation
 import FirebaseAuth
 import FirebaseFirestore
-import Foundation
+
 struct ExpenseModel: Codable{
     let id: String
     let user_id: String
@@ -20,8 +21,10 @@ struct ExpenseModel: Codable{
     var OTT_Subscrption: Double
     var Miscellaneous: Double
     var date: String
-    struct FireStoreOperations{
-    }
+}
+
+
+struct FireStoreOperations{
     
     static let db = Firestore.firestore()
     

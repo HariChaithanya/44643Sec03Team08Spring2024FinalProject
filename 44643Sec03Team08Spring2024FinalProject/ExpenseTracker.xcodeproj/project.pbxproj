@@ -13,8 +13,8 @@
 		70394FB92BCAD1DC00817529 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 70394FB82BCAD1DC00817529 /* FirebaseAuth */; };
 		70394FBB2BCAD1DC00817529 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 70394FBA2BCAD1DC00817529 /* FirebaseFirestore */; };
 		70394FBD2BCAD32000817529 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70394FBC2BCAD32000817529 /* Extensions.swift */; };
-		70394FC22BCADEED00817529 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 70394FC12BCADEED00817529 /* DGCharts */; };
-		70394FC42BCADEED00817529 /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 70394FC32BCADEED00817529 /* DGChartsDynamic */; };
+		70DD2C932BCF218100AECB77 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 70DD2C922BCF218100AECB77 /* DGCharts */; };
+		70DD2C952BCF218100AECB77 /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 70DD2C942BCF218100AECB77 /* DGChartsDynamic */; };
 		70EAE2A92BB6029800434819 /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EAE2A82BB6029800434819 /* AuthenticationModel.swift */; };
 		742999FE2B860F3300C22B9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742999FD2B860F3300C22B9C /* AppDelegate.swift */; };
 		74299A002B860F3300C22B9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742999FF2B860F3300C22B9C /* SceneDelegate.swift */; };
@@ -61,9 +61,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70394FC42BCADEED00817529 /* DGChartsDynamic in Frameworks */,
+				70DD2C952BCF218100AECB77 /* DGChartsDynamic in Frameworks */,
 				70394FB92BCAD1DC00817529 /* FirebaseAuth in Frameworks */,
-				70394FC22BCADEED00817529 /* DGCharts in Frameworks */,
+				70DD2C932BCF218100AECB77 /* DGCharts in Frameworks */,
 				70394FBB2BCAD1DC00817529 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,8 +133,8 @@
 			packageProductDependencies = (
 				70394FB82BCAD1DC00817529 /* FirebaseAuth */,
 				70394FBA2BCAD1DC00817529 /* FirebaseFirestore */,
-				70394FC12BCADEED00817529 /* DGCharts */,
-				70394FC32BCADEED00817529 /* DGChartsDynamic */,
+				70DD2C922BCF218100AECB77 /* DGCharts */,
+				70DD2C942BCF218100AECB77 /* DGChartsDynamic */,
 			);
 			productName = ExpenseTracker;
 			productReference = 742999FA2B860F3300C22B9C /* ExpenseTracker.app */;
@@ -166,7 +166,7 @@
 			mainGroup = 742999F12B860F3300C22B9C;
 			packageReferences = (
 				70394FB72BCAD1DC00817529 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				70394FC02BCADEED00817529 /* XCRemoteSwiftPackageReference "Charts" */,
+				70DD2C912BCF218100AECB77 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 742999FB2B860F3300C22B9C /* Products */;
 			projectDirPath = "";
@@ -443,7 +443,7 @@
 				minimumVersion = 10.24.0;
 			};
 		};
-		70394FC02BCADEED00817529 /* XCRemoteSwiftPackageReference "Charts" */ = {
+		70DD2C912BCF218100AECB77 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
 			requirement = {
@@ -464,14 +464,14 @@
 			package = 70394FB72BCAD1DC00817529 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
-		70394FC12BCADEED00817529 /* DGCharts */ = {
+		70DD2C922BCF218100AECB77 /* DGCharts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 70394FC02BCADEED00817529 /* XCRemoteSwiftPackageReference "Charts" */;
+			package = 70DD2C912BCF218100AECB77 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = DGCharts;
 		};
-		70394FC32BCADEED00817529 /* DGChartsDynamic */ = {
+		70DD2C942BCF218100AECB77 /* DGChartsDynamic */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 70394FC02BCADEED00817529 /* XCRemoteSwiftPackageReference "Charts" */;
+			package = 70DD2C912BCF218100AECB77 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = DGChartsDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
