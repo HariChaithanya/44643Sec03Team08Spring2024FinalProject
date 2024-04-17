@@ -67,6 +67,7 @@ class RegisterViewController: UIViewController {
         self.showSpinner(onView: self.view)
         register(email: emailTF.text!, password: passwordTF.text!)
         
+        
     }
     
     
@@ -147,6 +148,11 @@ class RegisterViewController: UIViewController {
         }))
         
         self.present(alert, animated: true, completion: nil)
+    }
+    @IBAction func registerBtnClicked(_ sender: Any) {
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

@@ -15,7 +15,7 @@ protocol ExpenseUpdatedDelegate {
 }
 
 class AddExpenseViewController: UIViewController {
-    
+
     var delegate: ExpenseUpdatedDelegate?
     
     @IBOutlet weak var categoryBtn: UIButton!
@@ -27,14 +27,15 @@ class AddExpenseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.navigationItem.title = "Add Expense"
+        self.setupMenuPopUpButton()
         self.tabBarController?.tabBar.isHidden = true
         amountTF.attributedPlaceholder = NSAttributedString(string: "Amount", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        
+
     }
     
-    
+
     func setupMenuPopUpButton() {
         let popUpMenuButtonClosure = { (action: UIAction) in
             print("Pop-up action")
@@ -61,23 +62,18 @@ class AddExpenseViewController: UIViewController {
     }
     
     
-    
-    
-    // Do any additional setup after loading the view.
-    
-    
-    
     /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+    
+    
     @IBAction func add(_ sender: Any) {
-        
         
         if amountTF.text == "" {
             
@@ -155,8 +151,8 @@ class AddExpenseViewController: UIViewController {
                 }
             }
         }
-        
     }
+    
     
     func setExpense() -> Void {
         
@@ -246,5 +242,4 @@ class AddExpenseViewController: UIViewController {
         
         return 0.0
     }
-    
 }

@@ -67,7 +67,7 @@ class LoginViewController: UIViewController {
             
             try await AuthenticationManager.shared.signIn(email: email, password: password)
             
-             self.removeSpinner()
+            self.removeSpinner()
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyTabBar") as! UITabBarController
             self.navigationController?.pushViewController(vc, animated: true)
             
@@ -84,6 +84,4 @@ class LoginViewController: UIViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
-
-
 }
