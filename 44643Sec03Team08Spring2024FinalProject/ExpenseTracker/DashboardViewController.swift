@@ -10,21 +10,44 @@ import CoreML
 import Charts
 import DGCharts
 
-
-class DashboardViewController: UIViewController {
+class DashboardViewController: UIViewController, ChartViewDelegate, ExpenseUpdatedDelegate {
+    
+    func expenseUpdated() {
+        
+        self.getExpense()
+        self.getPredictedValue()
+    }
+    
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        
+        print(entry)
+        let value = entry.y
+        let index = Int(entry.x)
+        if value > 0 {
+            
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "UpdateOrDeleteExpenseViewController") as! UpdateOrDeleteExpenseViewController
+            
+            vc.expense = value
+            vc.selectedCategory = self.categoriesArray[index]
+            vc.delegate = self
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     
     @IBOutlet weak var monthLbl: UILabel!
     @IBOutlet weak var totalLbl: UILabel!
     @IBOutlet weak var predictionLbl: UILabel!
     
     @IBOutlet weak var barChart: BarChartView!
-
     
     @IBOutlet var costView: UIView!
     
     var model: ExpenseTrackerAll? = nil
     var monthlyExpense: ExpenseModel?
     
+    var categoriesArray = ["Rent", "Groceries", "Transportation", "Food", "Stationery", "Healthcare", "Entertainment", "Miscellaneous"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,6 +64,7 @@ class DashboardViewController: UIViewController {
         barChart.noDataTextColor = .white
         barChart.noDataFont = UIFont.systemFont(ofSize: 20, weight: .bold)
         barChart.noDataTextAlignment = .center
+        barChart.delegate = self
         
         self.getPredictedValue()
         self.getExpense()
@@ -51,6 +75,7 @@ class DashboardViewController: UIViewController {
         
         self.tabBarController?.tabBar.isHidden = false
     }
+    
     
     func getPredictedValue() -> Void {
         
@@ -88,8 +113,6 @@ class DashboardViewController: UIViewController {
         }
     }
 
-    
-   
     func getExpense() -> Void {
         
         FireStoreOperations.fetchExense { res in
@@ -174,7 +197,6 @@ class DashboardViewController: UIViewController {
     */
     
     
-    
     @IBAction func add(_ sender: Any) {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddExpenseViewController") as! AddExpenseViewController
@@ -185,14 +207,5 @@ class DashboardViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-        
-    }
-extension DashboardViewController: ExpenseUpdatedDelegate {
     
-    func expenseUpdated() {
-        
-        self.getExpense()
-        self.getPredictedValue()
-    }
-
 }

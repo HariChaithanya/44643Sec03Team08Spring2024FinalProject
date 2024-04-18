@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -908,21 +909,85 @@
                         <barButtonItem key="rightBarButtonItem" title="+" id="5Ji-tP-NHS">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="add:" destination="NaW-di-1YS" id="qQ7-cC-JjL"/>
+                                <action selector="add:" destination="NaW-di-1YS" id="mak-yM-ejq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="barChart" destination="tT1-4O-VtO" id="lMP-L1-eV7"/>
-                        <outlet property="costView" destination="2bm-6A-5Pk" id="orj-UU-JBg"/>
-                        <outlet property="monthLbl" destination="7Bk-OI-5Q5" id="ggl-CP-QTn"/>
-                        <outlet property="predictionLbl" destination="g5a-qd-5l6" id="Zz1-Qo-xDK"/>
-                        <outlet property="totalLbl" destination="y4b-IB-vQN" id="jIb-Cc-2Se"/>
+                        <outlet property="barChart" destination="tT1-4O-VtO" id="xln-DX-YNE"/>
+                        <outlet property="costView" destination="2bm-6A-5Pk" id="zhm-JS-cIQ"/>
+                        <outlet property="monthLbl" destination="7Bk-OI-5Q5" id="70C-3X-2Rb"/>
+                        <outlet property="predictionLbl" destination="g5a-qd-5l6" id="jxN-Kt-WXj"/>
+                        <outlet property="totalLbl" destination="y4b-IB-vQN" id="iJJ-DP-gsT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D8a-ZJ-peB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6147.3282442748086" y="-27.464788732394368"/>
+        </scene>
+        <!--Update Or Delete Expense View Controller-->
+        <scene sceneID="6e8-nm-UhM">
+            <objects>
+                <viewController storyboardIdentifier="UpdateOrDeleteExpenseViewController" id="DM9-05-7a1" customClass="UpdateOrDeleteExpenseViewController" customModule="ExpenseTracker" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Ko-oG-DZk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hiy-6t-IYl">
+                                <rect key="frame" x="16" y="83" width="361" height="44"/>
+                                <color key="backgroundColor" name="CardViewColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Vd2-c6-RNM"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LbP-CR-IJZ">
+                                <rect key="frame" x="16" y="175" width="361" height="34.333333333333343"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7M-NA-EzB">
+                                        <rect key="frame" x="0.0" y="0.0" width="176.66666666666666" height="34.333333333333336"/>
+                                        <inset key="contentEdgeInsets" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Update"/>
+                                        <connections>
+                                            <action selector="update:" destination="DM9-05-7a1" eventType="touchUpInside" id="bDm-DQ-v7g"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Hj-ji-X5l">
+                                        <rect key="frame" x="184.66666666666663" y="0.0" width="176.33333333333337" height="34.333333333333336"/>
+                                        <inset key="contentEdgeInsets" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Delete" cornerStyle="small">
+                                            <backgroundConfiguration key="background"/>
+                                            <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="deletes:" destination="DM9-05-7a1" eventType="touchUpInside" id="mY0-ba-DcW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="n85-1p-2BJ"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="n85-1p-2BJ" firstAttribute="trailing" secondItem="LbP-CR-IJZ" secondAttribute="trailing" constant="16" id="5gA-sw-h0E"/>
+                            <constraint firstItem="n85-1p-2BJ" firstAttribute="trailing" secondItem="hiy-6t-IYl" secondAttribute="trailing" constant="16" id="7tX-zJ-r2I"/>
+                            <constraint firstItem="hiy-6t-IYl" firstAttribute="leading" secondItem="n85-1p-2BJ" secondAttribute="leading" constant="16" id="F6S-EF-han"/>
+                            <constraint firstItem="hiy-6t-IYl" firstAttribute="top" secondItem="n85-1p-2BJ" secondAttribute="top" constant="24" id="JAX-Hn-WGx"/>
+                            <constraint firstItem="LbP-CR-IJZ" firstAttribute="top" secondItem="hiy-6t-IYl" secondAttribute="bottom" constant="48" id="dqe-cm-rnO"/>
+                            <constraint firstItem="LbP-CR-IJZ" firstAttribute="leading" secondItem="n85-1p-2BJ" secondAttribute="leading" constant="16" id="xVg-Fx-SHa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="amountTF" destination="hiy-6t-IYl" id="jK5-fJ-Qm8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="52l-3B-Acv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7774.8091603053435" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>
