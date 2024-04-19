@@ -5,6 +5,7 @@
 //  Created by Varshitha Lavu on 4/14/24.
 //
 
+
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
@@ -15,7 +16,7 @@ protocol ExpenseUpdatedDelegate {
 }
 
 class AddExpenseViewController: UIViewController {
-
+    
     var delegate: ExpenseUpdatedDelegate?
     
     @IBOutlet weak var categoryBtn: UIButton!
@@ -27,15 +28,15 @@ class AddExpenseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.navigationItem.title = "Add Expense"
         self.setupMenuPopUpButton()
         self.tabBarController?.tabBar.isHidden = true
         amountTF.attributedPlaceholder = NSAttributedString(string: "Amount", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-
+        
     }
     
-
+    
     func setupMenuPopUpButton() {
         let popUpMenuButtonClosure = { (action: UIAction) in
             print("Pop-up action")
@@ -53,7 +54,7 @@ class AddExpenseViewController: UIViewController {
             UIAction(title: "Stationery", handler: popUpMenuButtonClosure),
             UIAction(title: "Healthcare", handler: popUpMenuButtonClosure),
             UIAction(title: "Entertainment", handler: popUpMenuButtonClosure),
-            UIAction(title: "OTT Subscrption", handler: popUpMenuButtonClosure),
+            //UIAction(title: "OTT Subscrption", handler: popUpMenuButtonClosure),
             UIAction(title: "Miscellaneous", handler: popUpMenuButtonClosure)
         ])
         categoryBtn.showsMenuAsPrimaryAction = true
@@ -63,14 +64,14 @@ class AddExpenseViewController: UIViewController {
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     
     @IBAction func add(_ sender: Any) {
@@ -94,7 +95,7 @@ class AddExpenseViewController: UIViewController {
         
         let path = String(format: "%@", "Expenses")
         let db = Firestore.firestore()
-
+        
         let key = self.selectedCategory.replacingOccurrences(of: " ", with: "_")
         
         self.showSpinner(onView: self.view)
@@ -107,7 +108,7 @@ class AddExpenseViewController: UIViewController {
         let docRef = db.collection(path)
             .whereField("user_id", isEqualTo: id)
             .whereField("date", isEqualTo: str)
-
+        
         // Perform the query
         docRef.getDocuments { (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {
@@ -118,16 +119,13 @@ class AddExpenseViewController: UIViewController {
                 return
             }
             
-            // Check if there's a matching document
+            
             if documents.isEmpty {
                 
                 self.setExpense()
                 
             } else {
-                // There should be only one matching document, assuming user_id and month combination is unique
                 let document = documents[0]
-                
-                // Update the document
                 db.collection(path).document(document.documentID).updateData([
                     key: total
                 ]) { error in
@@ -179,22 +177,21 @@ class AddExpenseViewController: UIViewController {
                       "Stationery": self.selectedCategory == "Stationery" ? total : 0,
                       "Healthcare": self.selectedCategory == "Healthcare" ? total : 0,
                       "Entertainment": self.selectedCategory == "Entertainment" ? total : 0,
-                      "OTT_Subscrption": self.selectedCategory == "OTT Subscrption" ? total : 0,
                       "Miscellaneous": self.selectedCategory == "Miscellaneous" ? total : 0,
                       "date": str] as [String : Any]
         
         
         let path = String(format: "%@", "Expenses")
         let db = Firestore.firestore()
-
+        
         db.collection(path).document().setData(params) { err in
             if let err = err {
-
+                
                 self.removeSpinner()
                 self.showAlert(str: err.localizedDescription)
-
+                
             } else {
-
+                
                 self.removeSpinner()
                 let alert = UIAlertController(title: "", message: "Expense updated successfully", preferredStyle: UIAlertController.Style.alert)
                 
@@ -232,9 +229,7 @@ class AddExpenseViewController: UIViewController {
         }else if self.selectedCategory == "Entertainment" {
             
             return expense?.Entertainment ?? 0.0
-        }else if self.selectedCategory == "OTT Subscrption" {
             
-            return expense?.OTT_Subscrption ?? 0.0
         }else if self.selectedCategory == "Miscellaneous" {
             
             return expense?.Miscellaneous ?? 0.0

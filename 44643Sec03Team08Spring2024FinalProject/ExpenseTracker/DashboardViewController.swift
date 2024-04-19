@@ -9,8 +9,27 @@ import UIKit
 import CoreML
 import Charts
 import DGCharts
+import AnimatedGradientView
 
-class DashboardViewController: UIViewController, ChartViewDelegate, ExpenseUpdatedDelegate {
+class DashboardViewController: UIViewController, ChartViewDelegate, ExpenseUpdatedDelegate, CurrencySelectionDelegate {
+    func presentCurrencyViewController() {
+        let currencyVC = CurrencyViewController()
+        currencyVC.delegate = self
+        self.present(currencyVC, animated: true, completion: nil)
+    }
+    
+    func didSelectCurrency(_ currencyCode: String) {
+    }
+    func applyGradientBackground() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        let topColor = UIColor(red: 250/255, green: 208/255, blue: 219/255, alpha: 1.0).cgColor
+        let bottomColor = UIColor(red: 255/255, green: 234/255, blue: 156/255, alpha: 1.0).cgColor
+        
+        gradientLayer.colors = [topColor, bottomColor]
+        self.view.layer.sublayers?.filter({ $0 is CAGradientLayer }).forEach({ $0.removeFromSuperlayer() })
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
+    }
     
     func expenseUpdated() {
         
@@ -47,10 +66,11 @@ class DashboardViewController: UIViewController, ChartViewDelegate, ExpenseUpdat
     var monthlyExpense: ExpenseModel?
     
     var categoriesArray = ["Rent", "Groceries", "Transportation", "Food", "Stationery", "Healthcare", "Entertainment", "Miscellaneous"]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.applyGradientBackground()
+        
         self.navigationItem.title = "Dashboard"
         self.navigationItem.hidesBackButton = true
         costView.layer.cornerRadius = 8
@@ -112,7 +132,7 @@ class DashboardViewController: UIViewController, ChartViewDelegate, ExpenseUpdat
             print("Error while making prediction: \(error)")
         }
     }
-
+    
     func getExpense() -> Void {
         
         FireStoreOperations.fetchExense { res in
@@ -164,17 +184,17 @@ class DashboardViewController: UIViewController, ChartViewDelegate, ExpenseUpdat
         
         
         let set = BarChartDataSet(entries: entries, label: "Expense")
-        set.colors = [UIColor.blue]
+        set.colors = ChartColorTemplates.colorful()
         set.valueTextColor = .white
         
         let data = BarChartData(dataSet: set)
         barChart.data = data
         
         barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: ["Rent", "Grocery", "Transport", "Food", "Stationery", "Health", "Entertain", "Misc"])
-
+        
         barChart.leftAxis.axisLineColor = .white
         barChart.leftAxis.labelTextColor = .white
-                
+        
         
         barChart.xAxis.labelPosition = .bottom
         barChart.rightAxis.enabled = false
@@ -187,14 +207,14 @@ class DashboardViewController: UIViewController, ChartViewDelegate, ExpenseUpdat
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     
     @IBAction func add(_ sender: Any) {

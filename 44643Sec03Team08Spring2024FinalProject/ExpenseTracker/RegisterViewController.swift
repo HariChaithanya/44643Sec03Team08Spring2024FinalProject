@@ -115,7 +115,6 @@ class RegisterViewController: UIViewController {
                       "Stationery": 0,
                       "Healthcare": 0,
                       "Entertainment": 0,
-                      "OTT_Subscrption": 0,
                       "Miscellaneous": 0,
                       "date": str] as [String : Any]
         

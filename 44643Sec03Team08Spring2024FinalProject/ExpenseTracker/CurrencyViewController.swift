@@ -7,13 +7,16 @@
 
 import UIKit
 
-
+protocol CurrencySelectionDelegate: AnyObject {
+    func didSelectCurrency(_ currencyCode: String)
+}
 struct ConversionRate {
     let currencyCode: String
     let rate: Double
 }
 
 class CurrencyViewController: UIViewController {
+    weak var delegate: CurrencySelectionDelegate?
 
     @IBOutlet weak var dataTV: UITableView!
     
@@ -44,18 +47,12 @@ class CurrencyViewController: UIViewController {
     
     
     func setFrom() -> Void {
-        
         var optionsArray = [UIAction]()
         for currency in currencyList {
-            
             let action = UIAction(title: currency, state: .off, handler: { (action: UIAction) in
-                
-                print("Pop-up action")
-                print(action.title)
-                
-                self.conversionRates.removeAll()
                 self.selectedCurrency = action.title
                 self.getConversions()
+                self.delegate?.didSelectCurrency(action.title)
             })
             optionsArray.append(action)
         }

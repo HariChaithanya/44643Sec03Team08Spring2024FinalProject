@@ -27,37 +27,70 @@ class ChangePasswordViewController: ViewController {
     
     
     @IBAction func update(_ sender: UIButton) {
-    
         self.view.endEditing(true)
-          if self.validateData() {
-              
-              // Check if new password matches confirm password
-              guard newPassword.text == confirmPassword.text else {
-                  self.showAlert(str: "New password and confirm password do not match")
-                  return
-              }
-              
-              self.showSpinner(onView: self.view)
-              
-              Auth.auth().currentUser?.updatePassword(to: newPassword.text!) { (error) in
-                  
-                  if let error = error {
-                      self.removeSpinner()
-                      self.showAlert(str: error.localizedDescription)
-                  } else {
-                      self.removeSpinner()
-                      let alert = UIAlertController(title: "", message: "Password changed successfully", preferredStyle: .alert)
-                      let ok = UIAlertAction(title: "Ok", style: .default, handler: { action in
-                          self.navigationController?.popViewController(animated: true)
-                      })
-                      alert.addAction(ok)
-                      DispatchQueue.main.async {
-                          self.present(alert, animated: true)
-                      }
-                  }
-              }
-          }
-}
+        
+        guard let currentPassword = password.text, !currentPassword.isEmpty else {
+            self.showAlert(str: "Current Password is required")
+            return
+        }
+        
+        guard let newPassword = newPassword.text, !newPassword.isEmpty else {
+            self.showAlert(str: "New Password is required")
+            return
+        }
+        
+        guard let confirmPassword = confirmPassword.text, !confirmPassword.isEmpty else {
+            self.showAlert(str: "Confirm Password is required")
+            return
+        }
+        
+        // Check if new password matches confirm password
+        guard newPassword == confirmPassword else {
+            self.showAlert(str: "New password and confirm password do not match")
+            return
+        }
+        
+        // Authenticate the user
+        guard let currentUser = Auth.auth().currentUser else {
+            self.showAlert(str: "User not authenticated")
+            return
+        }
+        
+        // Reauthenticate the user with their current password
+        let credential = EmailAuthProvider.credential(withEmail: currentUser.email!, password: currentPassword)
+        currentUser.reauthenticate(with: credential) { [weak self] (authResult, error) in
+            guard let self = self else { return }
+            
+            if let error = error {
+                // Show alert for incorrect current password
+                self.showAlert(str: "Please enter correct current password")
+                return
+            }
+            
+            // User has been reauthenticated successfully, update password
+            self.showSpinner(onView: self.view)
+            currentUser.updatePassword(to: newPassword) { [weak self] (error) in
+                guard let self = self else { return }
+                
+                self.removeSpinner()
+                
+                if let error = error {
+                    // Show alert for password update error
+                    self.showAlert(str: error.localizedDescription)
+                } else {
+                    // Password changed successfully, show success alert
+                    let alert = UIAlertController(title: "", message: "Password changed successfully", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "Ok", style: .default, handler: { action in
+                        self.navigationController?.popViewController(animated: true)
+                    })
+                    alert.addAction(ok)
+                    DispatchQueue.main.async {
+                        self.present(alert, animated: true)
+                    }
+                }
+            }
+        }
+    }
 
 func validateData() -> Bool {
     
