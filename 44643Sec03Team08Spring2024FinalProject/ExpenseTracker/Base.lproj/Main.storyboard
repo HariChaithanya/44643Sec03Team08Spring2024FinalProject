@@ -233,7 +233,7 @@
                                                     </backgroundConfiguration>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="update:" destination="To7-1y-GGa" eventType="touchUpInside" id="Syc-Jr-VXj"/>
+                                                    <action selector="update:" destination="To7-1y-GGa" eventType="touchUpInside" id="f74-sh-OyS"/>
                                                 </connections>
                                             </button>
                                         </subviews>

@@ -40,6 +40,8 @@
 		7011446A2BC9ED9F00850E27 /* ExpenseTrackerModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 701144692BC9ED9F00850E27 /* ExpenseTrackerModel.mlmodel */; };
 		7011446C2BC9EDC200850E27 /* ExpenseTrackerAll.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7011446B2BC9EDC200850E27 /* ExpenseTrackerAll.mlmodel */; };
 		70394FBD2BCAD32000817529 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70394FBC2BCAD32000817529 /* Extensions.swift */; };
+		707441902BD2DA8F007690E4 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7074418F2BD2DA8F007690E4 /* CurrencyTableViewCell.swift */; };
+		707441922BD2DAE5007690E4 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707441912BD2DAE5007690E4 /* CurrencyViewController.swift */; };
 		70EAE2A92BB6029800434819 /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EAE2A82BB6029800434819 /* AuthenticationModel.swift */; };
 		70FB80EC2BD16E8C00E7A64C /* UpdateOrDeleteExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FB80EB2BD16E8C00E7A64C /* UpdateOrDeleteExpenseViewController.swift */; };
 		742999FE2B860F3300C22B9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742999FD2B860F3300C22B9C /* AppDelegate.swift */; };
@@ -63,6 +65,8 @@
 		701144692BC9ED9F00850E27 /* ExpenseTrackerModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ExpenseTrackerModel.mlmodel; sourceTree = "<group>"; };
 		7011446B2BC9EDC200850E27 /* ExpenseTrackerAll.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ExpenseTrackerAll.mlmodel; sourceTree = "<group>"; };
 		70394FBC2BCAD32000817529 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7074418F2BD2DA8F007690E4 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
+		707441912BD2DAE5007690E4 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		70EAE2A82BB6029800434819 /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
 		70FB80EB2BD16E8C00E7A64C /* UpdateOrDeleteExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateOrDeleteExpenseViewController.swift; sourceTree = "<group>"; };
 		742999FA2B860F3300C22B9C /* ExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +156,8 @@
 				74299A132B8611A000C22B9C /* RegisterViewController.swift */,
 				74299A152B86133B00C22B9C /* DashboardViewController.swift */,
 				EFE13E4B2BC9FB6F00F8EE33 /* ChangePasswordViewController.swift */,
+				707441912BD2DAE5007690E4 /* CurrencyViewController.swift */,
+				7074418F2BD2DA8F007690E4 /* CurrencyTableViewCell.swift */,
 				EFE13E4D2BCA338800F8EE33 /* ExpenseModel.swift */,
 				15C16C372BCCB06700D398F0 /* AddExpenseViewController.swift */,
 				74538E382B99BF4400AB0602 /* ProfileViewController.swift */,
@@ -285,7 +291,9 @@
 				15C16C382BCCB06700D398F0 /* AddExpenseViewController.swift in Sources */,
 				EFE13E4E2BCA338800F8EE33 /* ExpenseModel.swift in Sources */,
 				742999FE2B860F3300C22B9C /* AppDelegate.swift in Sources */,
+				707441902BD2DA8F007690E4 /* CurrencyTableViewCell.swift in Sources */,
 				7455D6172B875215008560A9 /* SplashViewController.swift in Sources */,
+				707441922BD2DAE5007690E4 /* CurrencyViewController.swift in Sources */,
 				EFE13E4C2BC9FB6F00F8EE33 /* ChangePasswordViewController.swift in Sources */,
 				74538E392B99BF4400AB0602 /* ProfileViewController.swift in Sources */,
 				74299A002B860F3300C22B9C /* SceneDelegate.swift in Sources */,

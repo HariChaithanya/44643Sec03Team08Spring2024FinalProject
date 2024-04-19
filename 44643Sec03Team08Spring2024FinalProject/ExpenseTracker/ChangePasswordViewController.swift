@@ -28,33 +28,35 @@ class ChangePasswordViewController: ViewController {
     
     @IBAction func update(_ sender: UIButton) {
     
-    self.view.endEditing(true)
-    if self.validateData() {
-        
-        self.showSpinner(onView: self.view)
-        
-        Auth.auth().currentUser?.updatePassword(to: newPassword.text!) { (error) in
-            
-            
-            if error != nil {
-                
-                self.removeSpinner()
-                self.showAlert(str: error?.localizedDescription ?? "")
-            }else {
-                
-                self.removeSpinner()
-                let alert = UIAlertController(title: "", message: "Password changed successfully", preferredStyle: .alert)
-                let ok = UIAlertAction(title: "Ok", style: .default, handler: { action in
-                    
-                    self.navigationController?.popViewController(animated: true)
-                })
-                alert.addAction(ok)
-                DispatchQueue.main.async(execute: {
-                    self.present(alert, animated: true)
-                })
-            }
-        }
-    }
+        self.view.endEditing(true)
+          if self.validateData() {
+              
+              // Check if new password matches confirm password
+              guard newPassword.text == confirmPassword.text else {
+                  self.showAlert(str: "New password and confirm password do not match")
+                  return
+              }
+              
+              self.showSpinner(onView: self.view)
+              
+              Auth.auth().currentUser?.updatePassword(to: newPassword.text!) { (error) in
+                  
+                  if let error = error {
+                      self.removeSpinner()
+                      self.showAlert(str: error.localizedDescription)
+                  } else {
+                      self.removeSpinner()
+                      let alert = UIAlertController(title: "", message: "Password changed successfully", preferredStyle: .alert)
+                      let ok = UIAlertAction(title: "Ok", style: .default, handler: { action in
+                          self.navigationController?.popViewController(animated: true)
+                      })
+                      alert.addAction(ok)
+                      DispatchQueue.main.async {
+                          self.present(alert, animated: true)
+                      }
+                  }
+              }
+          }
 }
 
 func validateData() -> Bool {
