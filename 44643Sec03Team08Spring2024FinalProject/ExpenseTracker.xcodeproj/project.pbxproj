@@ -40,7 +40,6 @@
 		15FC93FD2BD3006800E2A8F0 /* AnimatedGradientView in Frameworks */ = {isa = PBXBuildFile; productRef = 15FC93FC2BD3006800E2A8F0 /* AnimatedGradientView */; };
 		7011446A2BC9ED9F00850E27 /* ExpenseTrackerModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 701144692BC9ED9F00850E27 /* ExpenseTrackerModel.mlmodel */; };
 		7011446C2BC9EDC200850E27 /* ExpenseTrackerAll.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7011446B2BC9EDC200850E27 /* ExpenseTrackerAll.mlmodel */; };
-		70394FBD2BCAD32000817529 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70394FBC2BCAD32000817529 /* Extensions.swift */; };
 		707441902BD2DA8F007690E4 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7074418F2BD2DA8F007690E4 /* CurrencyTableViewCell.swift */; };
 		707441922BD2DAE5007690E4 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707441912BD2DAE5007690E4 /* CurrencyViewController.swift */; };
 		70EAE2A92BB6029800434819 /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EAE2A82BB6029800434819 /* AuthenticationModel.swift */; };
@@ -65,7 +64,6 @@
 		15C16C372BCCB06700D398F0 /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
 		701144692BC9ED9F00850E27 /* ExpenseTrackerModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ExpenseTrackerModel.mlmodel; sourceTree = "<group>"; };
 		7011446B2BC9EDC200850E27 /* ExpenseTrackerAll.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ExpenseTrackerAll.mlmodel; sourceTree = "<group>"; };
-		70394FBC2BCAD32000817529 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7074418F2BD2DA8F007690E4 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
 		707441912BD2DAE5007690E4 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		70EAE2A82BB6029800434819 /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 				74299A012B860F3300C22B9C /* ViewController.swift */,
 				7455D6162B875215008560A9 /* SplashViewController.swift */,
 				74299A112B86119800C22B9C /* LoginViewController.swift */,
-				70394FBC2BCAD32000817529 /* Extensions.swift */,
 				74299A132B8611A000C22B9C /* RegisterViewController.swift */,
 				74299A152B86133B00C22B9C /* DashboardViewController.swift */,
 				EFE13E4B2BC9FB6F00F8EE33 /* ChangePasswordViewController.swift */,
@@ -301,7 +298,6 @@
 				EFE13E4C2BC9FB6F00F8EE33 /* ChangePasswordViewController.swift in Sources */,
 				74538E392B99BF4400AB0602 /* ProfileViewController.swift in Sources */,
 				74299A002B860F3300C22B9C /* SceneDelegate.swift in Sources */,
-				70394FBD2BCAD32000817529 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -64,7 +64,6 @@ class RegisterViewController: UIViewController {
             return
         }
         
-        self.showSpinner(onView: self.view)
         register(email: emailTF.text!, password: passwordTF.text!)
         
         
@@ -77,8 +76,6 @@ class RegisterViewController: UIViewController {
                                password: passwordTF.text!) { authResult, error in
             
             if error != nil {
-                
-                self.removeSpinner()
                 self.showAlert(str: error?.localizedDescription ?? "")
             }else{
                 
@@ -87,7 +84,7 @@ class RegisterViewController: UIViewController {
                 profile?.commitChanges(completion: { error in
                     if error != nil {
                         
-                        self.removeSpinner()
+                
                         self.showAlert(str: error?.localizedDescription ?? "")
                     }else{
                         
@@ -101,12 +98,15 @@ class RegisterViewController: UIViewController {
     
     func setExpense() -> Void {
         
+        //get the current user id
         let id = Auth.auth().currentUser?.uid ?? ""
         
         let dtFormatter = DateFormatter()
-        dtFormatter.dateFormat = "MM/yyyy"
-        let str = dtFormatter.string(from: Date())
         
+        dtFormatter.dateFormat = "MM/yyyy"
+        //get the current month
+        let str = dtFormatter.string(from: Date())
+        //create a dictionary to store expense category and expense and link user id in it.
         let params = ["user_id": id,
                       "Rent": 0,
                       "Groceries": 0,
@@ -120,17 +120,18 @@ class RegisterViewController: UIViewController {
         
         
         let path = String(format: "%@", "Expenses")
+        
+        //get the database
         let db = Firestore.firestore()
         
+        //we pass params and a new socument is created in firebase
+        //sets the document data
         db.collection(path).document().setData(params) { err in
             if let err = err {
                 
-                self.removeSpinner()
                 self.showAlert(str: err.localizedDescription)
                 
             } else {
-                
-                self.removeSpinner()
                 self.showAlert(str: "Account created successfully")
             }
         }
@@ -148,6 +149,8 @@ class RegisterViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    //once the register button is clicekd then go to Login page
     @IBAction func registerBtnClicked(_ sender: Any) {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController

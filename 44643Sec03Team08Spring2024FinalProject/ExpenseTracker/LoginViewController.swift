@@ -55,7 +55,6 @@ class LoginViewController: UIViewController {
         
         Task {
             
-            self.showSpinner(onView: self.view)
             await login(email: emailTF.text!, password: passwordTF.text!)
         }
 
@@ -64,16 +63,14 @@ class LoginViewController: UIViewController {
     
     func login(email: String, password: String) async {
         do {
-            
+            //call the login method present in the Authentication model
             try await AuthenticationManager.shared.signIn(email: email, password: password)
             
-            self.removeSpinner()
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyTabBar") as! UITabBarController
             self.navigationController?.pushViewController(vc, animated: true)
             
         } catch {
             
-            self.removeSpinner()
             self.showAlert(str: "Invalid Login Credentials! Please try again.")
         }
     }

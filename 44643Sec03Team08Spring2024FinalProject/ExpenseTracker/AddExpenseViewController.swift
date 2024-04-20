@@ -98,8 +98,6 @@ class AddExpenseViewController: UIViewController {
         
         let key = self.selectedCategory.replacingOccurrences(of: " ", with: "_")
         
-        self.showSpinner(onView: self.view)
-        
         
         let dtFormatter = DateFormatter()
         dtFormatter.dateFormat = "MM/yyyy"
@@ -113,8 +111,6 @@ class AddExpenseViewController: UIViewController {
         docRef.getDocuments { (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {
                 print("Error fetching documents: \(error!)")
-                
-                self.removeSpinner()
                 self.showAlert(str: error?.localizedDescription ?? "Error fetching documents")
                 return
             }
@@ -131,12 +127,10 @@ class AddExpenseViewController: UIViewController {
                 ]) { error in
                     if let error = error {
                         
-                        self.removeSpinner()
                         self.showAlert(str: error.localizedDescription)
                         
                     } else {
                         
-                        self.removeSpinner()
                         let alert = UIAlertController(title: "", message: "Expense updated successfully", preferredStyle: UIAlertController.Style.alert)
                         
                         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { action in
@@ -186,13 +180,9 @@ class AddExpenseViewController: UIViewController {
         
         db.collection(path).document().setData(params) { err in
             if let err = err {
-                
-                self.removeSpinner()
                 self.showAlert(str: err.localizedDescription)
                 
             } else {
-                
-                self.removeSpinner()
                 let alert = UIAlertController(title: "", message: "Expense updated successfully", preferredStyle: UIAlertController.Style.alert)
                 
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { action in

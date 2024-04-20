@@ -15,6 +15,7 @@ class UpdateOrDeleteExpenseViewController: UIViewController {
     
     @IBOutlet weak var amountTF: UITextField!
     
+    //expense value default to 0 
     var expense = 0.0
     var selectedCategory = ""
     
@@ -47,8 +48,6 @@ class UpdateOrDeleteExpenseViewController: UIViewController {
         
         let key = self.selectedCategory.replacingOccurrences(of: " ", with: "_")
         
-        self.showSpinner(onView: self.view)
-        
         let path = String(format: "%@", "Expenses")
         let db = Firestore.firestore()
         
@@ -63,7 +62,6 @@ class UpdateOrDeleteExpenseViewController: UIViewController {
         // Execute the query
         query.getDocuments { (snapshot, error) in
             if let error = error {
-                self.removeSpinner()
                 print("Error getting documents: \(error)")
             } else {
                 for document in snapshot!.documents {
@@ -75,11 +73,8 @@ class UpdateOrDeleteExpenseViewController: UIViewController {
                         key: amount
                     ]) { err in
                         if let err = err {
-                            self.removeSpinner()
                             print("Error updating document: \(err)")
                         } else {
-                            
-                            self.removeSpinner()
                             let alert = UIAlertController(title: "", message: "Expense updated successfully", preferredStyle: UIAlertController.Style.alert)
                             
                             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { action in
@@ -120,8 +115,6 @@ class UpdateOrDeleteExpenseViewController: UIViewController {
         
         let key = self.selectedCategory.replacingOccurrences(of: " ", with: "_")
         
-        self.showSpinner(onView: self.view)
-        
         let path = String(format: "%@", "Expenses")
         let db = Firestore.firestore()
         
@@ -136,7 +129,6 @@ class UpdateOrDeleteExpenseViewController: UIViewController {
         // Execute the query
         query.getDocuments { (snapshot, error) in
             if let error = error {
-                self.removeSpinner()
                 print("Error getting documents: \(error)")
             } else {
                 for document in snapshot!.documents {
@@ -148,11 +140,8 @@ class UpdateOrDeleteExpenseViewController: UIViewController {
                         key: 0
                     ]) { err in
                         if let err = err {
-                            self.removeSpinner()
                             print("Error updating document: \(err)")
                         } else {
-                            
-                            self.removeSpinner()
                             let alert = UIAlertController(title: "", message: "Expense deleted successfully", preferredStyle: UIAlertController.Style.alert)
                             
                             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { action in

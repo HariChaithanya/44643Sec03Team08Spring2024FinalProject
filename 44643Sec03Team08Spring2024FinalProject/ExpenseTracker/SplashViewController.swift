@@ -15,18 +15,26 @@ class SplashViewController: UIViewController {
         
         self.navigationController?.navigationBar.isHidden = true
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        
+        //after 3 seconds display the login page
         perform(#selector(moveToView), with: nil, afterDelay: 3)
+        
         self.tabBarController?.tabBar.isHidden = true
     }
     
     
+    //on opening the application
     @objc func moveToView() -> Void {
         
+        
+        //if current user is nil then go to login view controller
         if Auth.auth().currentUser == nil {
             
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             self.navigationController?.pushViewController(vc, animated: true)
-        }else {
+        }
+        //else go to tab bar and push view controller to the stack
+        else {
             
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyTabBar") as! UITabBarController
             self.navigationController?.pushViewController(vc, animated: true)
@@ -45,6 +53,7 @@ class SplashViewController: UIViewController {
 }
 
 extension UIViewController {
+    
     
     func showAlert(str: String) -> Void {
         

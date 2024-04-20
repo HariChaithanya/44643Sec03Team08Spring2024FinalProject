@@ -11,7 +11,10 @@ import Charts
 import DGCharts
 import AnimatedGradientView
 
+
+//ChartViewDelegate is a protocol that conatins all the required methods that will help to add chart and perfrom opeartions on charts
 class DashboardViewController: UIViewController, ChartViewDelegate, ExpenseUpdatedDelegate, CurrencySelectionDelegate {
+    
     func presentCurrencyViewController() {
         let currencyVC = CurrencyViewController()
         currencyVC.delegate = self
@@ -20,6 +23,9 @@ class DashboardViewController: UIViewController, ChartViewDelegate, ExpenseUpdat
     
     func didSelectCurrency(_ currencyCode: String) {
     }
+    
+    
+    //applying the fradient colors
     func applyGradientBackground() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
@@ -31,21 +37,26 @@ class DashboardViewController: UIViewController, ChartViewDelegate, ExpenseUpdat
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
+    
     func expenseUpdated() {
         
         self.getExpense()
         self.getPredictedValue()
     }
     
+    //method present in ChartViewDelegate
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         
         print(entry)
+        //get the value of the expense which is in y axis
         let value = entry.y
+        //gets the index of the category
         let index = Int(entry.x)
+        //check if it is a empty expense
         if value > 0 {
-            
+            //if not empty then goto update/ delete VC
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "UpdateOrDeleteExpenseViewController") as! UpdateOrDeleteExpenseViewController
-            
+            //pass the yaxis value which is
             vc.expense = value
             vc.selectedCategory = self.categoriesArray[index]
             vc.delegate = self

@@ -68,11 +68,9 @@ class ChangePasswordViewController: ViewController {
             }
             
             // User has been reauthenticated successfully, update password
-            self.showSpinner(onView: self.view)
             currentUser.updatePassword(to: newPassword) { [weak self] (error) in
                 guard let self = self else { return }
                 
-                self.removeSpinner()
                 
                 if let error = error {
                     // Show alert for password update error
