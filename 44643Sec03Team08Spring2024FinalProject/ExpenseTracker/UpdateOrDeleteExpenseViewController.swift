@@ -10,18 +10,16 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class UpdateOrDeleteExpenseViewController: UIViewController {
-
+    
     var delegate: ExpenseUpdatedDelegate?
     
     @IBOutlet weak var amountTF: UITextField!
-    
-    //expense value default to 0 
     var expense = 0.0
     var selectedCategory = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.navigationItem.title = "Update Expense"
         self.tabBarController?.tabBar.isHidden = true
         amountTF.attributedPlaceholder = NSAttributedString(string: "Amount", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
@@ -29,7 +27,7 @@ class UpdateOrDeleteExpenseViewController: UIViewController {
         amountTF.text = String(format: "%0.2f", expense)
     }
     
-
+    
     @IBAction func update(_ sender: Any) {
         
         if amountTF.text == "" {
@@ -58,17 +56,12 @@ class UpdateOrDeleteExpenseViewController: UIViewController {
         let query = db.collection(path)
             .whereField("user_id", isEqualTo: id)
             .whereField("date", isEqualTo: str)
-        
-        // Execute the query
         query.getDocuments { (snapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
             } else {
                 for document in snapshot!.documents {
-                    // Get the reference to the document
                     let docRef = document.reference
-                    
-                    // Update the value for the desired key
                     docRef.updateData([
                         key: amount
                     ]) { err in
@@ -125,17 +118,13 @@ class UpdateOrDeleteExpenseViewController: UIViewController {
         let query = db.collection(path)
             .whereField("user_id", isEqualTo: id)
             .whereField("date", isEqualTo: str)
-        
-        // Execute the query
         query.getDocuments { (snapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
             } else {
                 for document in snapshot!.documents {
-                    // Get the reference to the document
                     let docRef = document.reference
                     
-                    // Update the value for the desired key
                     docRef.updateData([
                         key: 0
                     ]) { err in
@@ -158,13 +147,13 @@ class UpdateOrDeleteExpenseViewController: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

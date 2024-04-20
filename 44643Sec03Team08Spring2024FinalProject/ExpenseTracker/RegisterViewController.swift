@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import AudioToolbox
 
 class RegisterViewController: UIViewController {
     
@@ -84,7 +85,7 @@ class RegisterViewController: UIViewController {
                 profile?.commitChanges(completion: { error in
                     if error != nil {
                         
-                
+                        
                         self.showAlert(str: error?.localizedDescription ?? "")
                     }else{
                         
@@ -152,7 +153,7 @@ class RegisterViewController: UIViewController {
     
     //once the register button is clicekd then go to Login page
     @IBAction func registerBtnClicked(_ sender: Any) {
-        
+        AudioServicesPlaySystemSound(1104)
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }

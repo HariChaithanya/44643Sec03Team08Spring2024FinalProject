@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import AudioToolbox
 
 protocol ExpenseUpdatedDelegate {
     
@@ -134,7 +135,7 @@ class AddExpenseViewController: UIViewController {
                         let alert = UIAlertController(title: "", message: "Expense updated successfully", preferredStyle: UIAlertController.Style.alert)
                         
                         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { action in
-                            
+                            AudioServicesPlaySystemSound(1109)
                             self.delegate?.expenseUpdated()
                             self.navigationController?.popViewController(animated: true)
                         }))
@@ -186,7 +187,7 @@ class AddExpenseViewController: UIViewController {
                 let alert = UIAlertController(title: "", message: "Expense updated successfully", preferredStyle: UIAlertController.Style.alert)
                 
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { action in
-                    
+                    AudioServicesPlaySystemSound(1109)
                     self.delegate?.expenseUpdated()
                     self.navigationController?.popViewController(animated: true)
                 }))

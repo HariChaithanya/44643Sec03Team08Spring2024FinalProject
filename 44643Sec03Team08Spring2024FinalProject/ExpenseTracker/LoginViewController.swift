@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class LoginViewController: UIViewController {
     
@@ -28,19 +29,19 @@ class LoginViewController: UIViewController {
         
         self.navigationController?.navigationBar.isHidden = true
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     @IBAction func login(_ sender: Any) {
-        
+        AudioServicesPlaySystemSound(1104)
         if emailTF.text == "" {
             
             self.showAlert(str: "Please enter email")
@@ -57,13 +58,13 @@ class LoginViewController: UIViewController {
             
             await login(email: emailTF.text!, password: passwordTF.text!)
         }
-
+        
     }
     
     
     func login(email: String, password: String) async {
+        
         do {
-            //call the login method present in the Authentication model
             try await AuthenticationManager.shared.signIn(email: email, password: password)
             
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyTabBar") as! UITabBarController
@@ -77,7 +78,7 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func registerBtnClicked(_ sender: Any) {
-        
+        AudioServicesPlaySystemSound(1104)
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }

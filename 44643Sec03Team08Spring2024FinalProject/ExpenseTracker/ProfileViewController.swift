@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import AudioToolbox
 
 class ProfileViewController: UIViewController {
 
@@ -43,7 +44,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func logout(_ sender: Any) {
-        
+        AudioServicesPlaySystemSound(1104)
         let alert = UIAlertController(title: "Alert", message: "Are you sure you want to logout?", preferredStyle: UIAlertController.Style.alert)
         
         
@@ -51,14 +52,12 @@ class ProfileViewController: UIViewController {
 
         }))
         
-        // add an action (button)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.destructive, handler: { action in
 
             self.logout()
 
         }))
         
-        // show the alert
         self.present(alert, animated: true, completion: nil)
         
         

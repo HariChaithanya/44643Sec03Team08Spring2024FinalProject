@@ -25,16 +25,28 @@ class DashboardViewController: UIViewController, ChartViewDelegate, ExpenseUpdat
     }
     
     
-    //applying the fradient colors
     func applyGradientBackground() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
-        let topColor = UIColor(red: 250/255, green: 208/255, blue: 219/255, alpha: 1.0).cgColor
-        let bottomColor = UIColor(red: 255/255, green: 234/255, blue: 156/255, alpha: 1.0).cgColor
         
-        gradientLayer.colors = [topColor, bottomColor]
-        self.view.layer.sublayers?.filter({ $0 is CAGradientLayer }).forEach({ $0.removeFromSuperlayer() })
-        self.view.layer.insertSublayer(gradientLayer, at: 0)
+        let animatedGradient = AnimatedGradientView(frame: self.view.bounds)
+        animatedGradient.animationValues = [
+            (colors: ["#FFD3DF", "#FFC268"], direction: .up, type: .axial),
+            (colors: ["#207E87", "#86CDFA"], direction: .right, type: .axial),
+            (colors: ["#936FDB", "#7A50A0"], direction: .down, type: .axial),
+            (colors: ["#FF804F", "#FF6347"], direction: .left, type: .axial)
+        ]
+        
+        animatedGradient.startAnimating()
+        self.view.insertSubview(animatedGradient, at: 0)
+    }
+
+
+    override func viewIsAppearing(_ animated: Bool) {
+        
+        super.viewIsAppearing(animated)
+        self.applyGradientBackground()
+        
     }
     
     
@@ -43,20 +55,14 @@ class DashboardViewController: UIViewController, ChartViewDelegate, ExpenseUpdat
         self.getExpense()
         self.getPredictedValue()
     }
-    
-    //method present in ChartViewDelegate
+
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         
         print(entry)
-        //get the value of the expense which is in y axis
         let value = entry.y
-        //gets the index of the category
         let index = Int(entry.x)
-        //check if it is a empty expense
         if value > 0 {
-            //if not empty then goto update/ delete VC
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "UpdateOrDeleteExpenseViewController") as! UpdateOrDeleteExpenseViewController
-            //pass the yaxis value which is
             vc.expense = value
             vc.selectedCategory = self.categoriesArray[index]
             vc.delegate = self
@@ -103,7 +109,7 @@ class DashboardViewController: UIViewController, ChartViewDelegate, ExpenseUpdat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        applyGradientBackground()
         self.tabBarController?.tabBar.isHidden = false
     }
     
@@ -173,7 +179,6 @@ class DashboardViewController: UIViewController, ChartViewDelegate, ExpenseUpdat
     
     func createBarChart() -> Void {
         
-        //Supply Data
         var entries = [BarChartDataEntry]()
         
         entries.append(BarChartDataEntry(x: Double(0),

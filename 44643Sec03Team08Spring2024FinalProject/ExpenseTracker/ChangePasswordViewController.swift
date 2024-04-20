@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import AudioToolbox
 
 class ChangePasswordViewController: ViewController {
     
@@ -27,6 +28,7 @@ class ChangePasswordViewController: ViewController {
     
     
     @IBAction func update(_ sender: UIButton) {
+        AudioServicesPlaySystemSound(1104)
         self.view.endEditing(true)
         
         guard let currentPassword = password.text, !currentPassword.isEmpty else {
@@ -79,6 +81,7 @@ class ChangePasswordViewController: ViewController {
                     // Password changed successfully, show success alert
                     let alert = UIAlertController(title: "", message: "Password changed successfully", preferredStyle: .alert)
                     let ok = UIAlertAction(title: "Ok", style: .default, handler: { action in
+                        AudioServicesPlaySystemSound(1109)
                         self.navigationController?.popViewController(animated: true)
                     })
                     alert.addAction(ok)
@@ -89,26 +92,26 @@ class ChangePasswordViewController: ViewController {
             }
         }
     }
-
-func validateData() -> Bool {
     
-    if password.text == "" {
+    func validateData() -> Bool {
         
-        self.showAlert(str: "Password is required")
-        return false
-    }else if newPassword.text == "" {
+        if password.text == "" {
+            
+            self.showAlert(str: "Password is required")
+            return false
+        }else if newPassword.text == "" {
+            
+            self.showAlert(str: "New Password is required")
+            return false
+        }else if confirmPassword.text == "" {
+            
+            self.showAlert(str: "Confirm Password is required")
+            return false
+        }
         
-        self.showAlert(str: "New Password is required")
-        return false
-    }else if confirmPassword.text == "" {
-        
-        self.showAlert(str: "Confirm Password is required")
-        return false
+        return true
     }
     
-    return true
-}
-
 }
 
 /*
